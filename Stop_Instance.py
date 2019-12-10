@@ -10,11 +10,7 @@ def StopInstances(instances, must_run):
             for running_instance in range(len(must_run)):
                 # REPLACE with not equal
                 if response.data.id != must_run[running_instance]:
-                    print("Instance status: {}".format(response.data.lifecycle_state))
-                    print("Instance name: {}".format(response.data.display_name))
-                    print("Instance ocid: {}".format(response.data.id))
-                    #Remove # from the line below if you really stop
-                    #ComputeClient.instance_action(response.data.id, "STOP")
+                    ComputeClient.instance_action(response.data.id, "STOP")
 
 
 
